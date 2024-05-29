@@ -1,0 +1,91 @@
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-item {
+    position: relative;
+    width: calc(20% - 20px); 
+    margin: 10px;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.image-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.views {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+.like-button {
+    background-color: #ff4757;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.like-button.liked {
+    background-color: #2ecc71; 
+}
+.heart {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    background-image: url('https://abs.twimg.com/a/1446542199/img/t1/web_heart_animation.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 2900%;
+}
+
+.heart:hover {
+    background-position: right;
+}
+
+.is_animating {
+    animation: heart-burst .8s steps(28) 1;
+}
+
+@keyframes heart-burst {
+    from { background-position: left; }
+    to { background-position: right; }
+}
+
+
+@media (max-width: 768px) {
+    .image-item {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 480px) {
+    .image-item {
+        width: calc(100% - 20px); 
+    }
+}
+
+
+
